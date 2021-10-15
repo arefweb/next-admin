@@ -1,0 +1,246 @@
+
+.crypto{
+  padding: 0 40px;
+  &-cards{
+    padding: 10px 5px;
+  }
+  &-card{
+    box-shadow: 0px 0px 6px -2px #000000dc;
+    width: 100%;
+    min-height: 193px;
+    border-radius: 4px;
+    overflow: hidden;
+    font-family: "Montserrat";
+    display: flex;
+    flex-direction: column;
+    background-color: white;
+    &__head{
+      padding: 16px;
+      p{
+        margin: 0;
+      }
+      &-prices{
+        display: flex;
+        align-items: baseline;
+        h4{
+          margin: 10px 0;
+        }
+        .asc{
+          display: flex;
+          align-items: center;
+          margin-right: 8px;
+          color: rgb(141, 205, 3);
+        }
+        .dec{
+          display: flex;
+          align-items: center;
+          margin-right: 8px;
+          color: rgb(224, 9, 48);
+        }
+      }
+    }
+    &__body{
+      height: 112px;
+    }
+  }
+
+  &-balance{
+    padding: 10px 5px;
+    margin-top: 8px;
+    &-box{
+      box-shadow: 0px 0px 6px -2px #000000dc;
+      width: 100%;
+      background-color: white;
+      border-radius: 4px;
+      overflow: hidden;
+      padding: 10px 20px;
+      &-info{
+        display: flex;
+        margin-top: -16px;
+        &-right{
+          width: 50%;
+          p{
+            margin-top: -20px;
+          }
+          .variz{
+            background-color: #f50057;
+            color: #fff;
+            font-family: "Vazir";
+            font-size: 16px;
+            display: block;
+            width: 85px;
+          }
+          .bardasht{
+            background-color: #fff;
+            color: #000;
+            border-color: gray;
+            font-family: "Vazir";
+            font-size: 16px;
+            display: block;
+            margin-top: 10px;
+            width: 85px;
+          }
+          .addWallet{
+            font-family: "Vazir";
+            font-size: 16px;
+            margin-top: 15px;
+            display: flex;
+            width: 175px;
+            justify-content: space-between;
+            padding: 2px;
+          }
+        }
+        &-left{
+          width: 50%;
+          &-cryp{
+            margin-top: 15px;
+            &-title{
+              font-family: "Montserrat";
+              font-size: 14px;
+            }
+            &-bar{
+              display: flex;
+              align-items: center;
+              margin-top: 5px;
+              &-btc{
+                height: 4px;
+                width: 74%;
+                background-color:rgb(141, 205, 3);
+                border-radius: 3px;
+              }
+              &-rpl{
+                height: 4px;
+                width: 18%;
+                background-color:#ff8800;
+                border-radius: 3px;
+              }
+              &-lte{
+                height: 4px;
+                width: 8%;
+                background-color:#e31d41;
+                border-radius: 3px;
+              }
+              span{
+                font-family: "Montserrat";
+                font-size: 14px;
+                margin-right: 5px;
+              }
+            }
+          }
+        }
+        
+      }
+
+      &-Etitle{
+        span{
+          margin-top: -15px;
+          display: block;
+          color: gray;
+          font-size: 14px;
+        }
+      }
+
+      &-Echart{
+        height: 205px;
+      }
+    }
+  }
+
+  &__recent-payments{
+    padding: 10px 5px;
+    margin-top: 8px;
+    margin-bottom: 38px;
+    &-box{
+      box-shadow: 0px 0px 6px -2px #000000dc;
+      width: 100%;
+      background-color: white;
+      border-radius: 4px;
+      overflow: hidden;
+      &-head{
+        padding: 24px;
+        h4{
+          margin: 0;
+        }
+      }
+      &-body{
+        height: 275px;
+        overflow-y: auto;
+        table{
+          width: 100%;
+          border-collapse: collapse;
+          thead{
+            th:nth-child(1){
+              padding: 0px 24px 12px 6px;
+            }
+            th:nth-child(2){
+              padding: 0px 6px 12px 6px;
+            }
+            th:nth-child(3){
+              padding: 0px 6px 12px 24px;
+            }
+            th{
+              text-align: right;
+              color: #020202;
+              font-size: 13px;
+            }
+          }
+          tbody{
+            td:nth-child(1){
+              padding: 6px 24px 6px 6px;
+              width: 50%;
+            }
+            td:nth-child(2){
+              padding: 6px;
+              width: 25%;
+              color: rgba(0, 0, 0, 0.6);
+              font-size: 15px;
+            }
+            td:nth-child(3){
+              padding: 6px 6px 6px 24px;
+              width: 25%;
+              color: rgba(0, 0, 0, 0.6);
+              font-size: 15px;
+            }
+            tr{
+              position: relative;
+              border-top: solid 1px rgba(0, 0, 0, 0.06);
+              transition: all .2s;
+              & .account-holder{
+                display: flex;
+                align-items: center;
+                &-picture{
+                  border-radius: 50%;
+                  overflow: hidden;
+                  display: flex;
+                  align-items: center;
+                  justify-content: center;
+                }
+                &-name{
+                  margin-right: 15px;
+                  p{
+                    color: rgba(0, 0, 0, 0.6);
+                    font-size: 15px;
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+    ::-webkit-scrollbar {
+      width: 5px;
+    }
+    
+    ::-webkit-scrollbar-track {
+        -webkit-box-shadow: inset 0 0 6px rgba(0,0,0,0.3); 
+        border-radius: 10px;
+    }
+    
+    ::-webkit-scrollbar-thumb {
+        border-radius: 10px;
+        -webkit-box-shadow: inset 0 0 6px rgba(0,0,0,0.5); 
+    }
+  }
+}
+

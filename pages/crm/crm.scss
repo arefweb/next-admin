@@ -1,0 +1,117 @@
+
+.crm{
+  padding: 0 40px;
+  .welcome{
+    padding: 10px 5px;
+    &-box{
+      box-shadow: 0px 0px 6px -2px #000000dc;
+      width: 100%;
+      border-radius: 4px;
+      overflow: hidden;
+      background-color: white;
+      &-head{
+        padding: 24px;
+        h4{
+          margin: 0;
+        }
+      }
+      &-body{
+        padding: 24px;
+        padding-top: 0;
+        display: flex;
+        & .notifications{
+          width: 25%;
+          &-item{
+            display: flex;
+            align-items: center;
+            font-size: 14px;
+            color: rgba(0, 0, 0, 0.6);
+            margin-top: 8px;
+            span{
+              margin-right: 5px;
+            }
+          }
+        }
+        & .visits{
+          width: 50%;
+        }
+        & .audiance{
+          width: 25%;
+          &-overview{
+            margin-top: 8px;
+            margin-right: 15px;
+            &-title{
+              font-size: 14px;
+            }
+            &-bar{
+              display: flex;
+              align-items: center;
+              margin-top: 1px;
+              &-male{
+                height: 4px;
+                width: 51%;
+                background-color:#ffa500;
+                border-radius: 3px;
+              }
+              &-female{
+                height: 4px;
+                width: 44%;
+                background-color:#0000ff;
+                border-radius: 3px;
+              }
+              &-other{
+                height: 4px;
+                width: 4%;
+                background-color:#008000 ;
+                border-radius: 3px;
+              }
+              span{
+                font-family: "Montserrat";
+                font-size: 14px;
+                margin-right: 5px;
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+
+  .stats{
+    padding: 10px 5px;
+    margin-top: 8px;
+    &-card{
+      box-shadow: 0px 0px 6px -2px #000000dc;
+      width: 100%;
+      border-radius: 4px;
+      overflow: hidden;
+      background-color: white;
+      display: flex;
+      align-items: center;
+      padding: 10px;
+      &-text{
+        color: #fff;
+        margin-right: 15px;
+        h3{
+          margin: 0;
+          font-size: 21px;
+        }
+      }
+      &-icon{
+        color: #fff;
+      }
+    }
+    &-card.proj{
+      background:  linear-gradient(rgb(142, 73, 240) -18.96%, rgb(73, 4, 171) 108.17%);
+    }
+    &-card.task{
+      background-image: linear-gradient(rgb(90, 185, 254) -18.96%, rgb(19, 114, 183) 108.17%);
+    }
+    &-card.team{
+      background-image: linear-gradient(rgb(192, 118, 251) -18.96%, rgb(119, 23, 194) 108.17%);
+    }
+    &-card.file{
+      background-image: linear-gradient(rgb(242, 82, 71) -18.96%, rgb(183, 45, 35) 108.17%);
+    }
+  }
+}
