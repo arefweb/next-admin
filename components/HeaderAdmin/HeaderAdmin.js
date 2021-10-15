@@ -18,7 +18,7 @@ const HeaderAdmin = () => {
       setTimeout(() => {
         deffredPrompt.prompt();
         setDeffredPrompt(null);
-      }, 4000);
+      }, 2000);
     }
   };
 
