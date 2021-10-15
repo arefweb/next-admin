@@ -21,7 +21,7 @@ const Crm = () => {
           name="description"
           content="داشبورد مدیریت ارتباط با مشتری عارف موحدزاده"
         />
-        <link rel="icon" href="/favicon.ico" />
+        <link rel="icon" href="/favicon.png" />
       </Head>
 
       <section className="container crm">
