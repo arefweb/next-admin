@@ -4,6 +4,7 @@ import Typography from "@mui/material/Typography";
 import IconButton from "@mui/material/IconButton";
 import AppsIcon from "@mui/icons-material/Apps";
 import MenuIcon from "@mui/icons-material/Menu";
+import Link from "next/link";
 
 
 const HeaderAdmin = () => {
@@ -140,7 +141,9 @@ const HeaderAdmin = () => {
         </Popover>
       </div>
       <div className="logo">
-        <a href="/">Aref</a>
+        <Link href="/">
+          <a >Aref</a>
+        </Link>
       </div>
     </header>
   );
