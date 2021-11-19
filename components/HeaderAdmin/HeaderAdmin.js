@@ -33,20 +33,6 @@ const HeaderAdmin = () => {
     setAnchorEl(null);
   };
 
-  useEffect(() => {
-    const loadDetct = (e) => {
-      if (
-        window.innerWidth < 1000 &&
-        !document.querySelector(".sidebar").classList.contains("menuHide")
-      ) {
-        document.querySelector(".sidebar").classList.add("menuHide");
-      }
-    };
-    window.addEventListener("load", loadDetct);
-    return () => {
-      window.removeEventListener("load", loadDetct);
-    };
-  }, []);
 
   useEffect(() => {
     const resizeToggle = (e) => {
@@ -63,6 +49,7 @@ const HeaderAdmin = () => {
         ) {
           document.querySelector(".sidebar").classList.remove("menuHide");
         }
+        
       }
     };
     window.addEventListener("resize", resizeToggle);

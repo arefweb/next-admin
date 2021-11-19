@@ -20,7 +20,7 @@ const Sidebar = () => {
 
 
   return (
-    <aside className="sidebar">
+    <aside className="sidebar menuHide">
       <div className="sidebar__header">
         <figure className="sidebar__header-profile-pic">
           <Image
