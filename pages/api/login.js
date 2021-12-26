@@ -1,6 +1,6 @@
-const fs = require("fs");
-const jwt = require("jsonwebtoken");
-const secret = require("../../config");
+import fs from "fs";
+import jwt from "jsonwebtoken";
+import secret from "../../config"
 
 export default function handler(req, res) {
   if (req.method === "POST") {
@@ -34,6 +34,5 @@ export default function handler(req, res) {
     } else {
       return res.status(401).json({ message: "Wrong information!" });
     }
-  } 
+  }
 }
-

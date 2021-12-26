@@ -1,7 +1,7 @@
-const jwt = require("jsonwebtoken");
-const secret = require("../../config");
+import jwt from "jsonwebtoken";
+import secret from "../../config";
 
-export default function handler(req, res){
+export default function handler(req, res) {
   const token =
     req.body.token || req.query.token || req.headers["x-access-token"];
 
@@ -15,5 +15,4 @@ export default function handler(req, res){
   } catch (err) {
     return res.status(401).json({ status: 401 });
   }
-};
-
+}
