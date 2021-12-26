@@ -7,7 +7,7 @@ import Alert from "@mui/material/Alert";
 import ErrorToast from '../../components/Toasts/ErrorToast';
 import CircularProgress from "@mui/material/CircularProgress";
 
-const login = () => {
+const Login = () => {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
   const [openError, setOpenError] = useState(false);
@@ -97,4 +97,4 @@ const login = () => {
   );
 }
 
-export default login
+export default Login;
