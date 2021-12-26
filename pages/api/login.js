@@ -6,30 +6,33 @@ export default function handler(req, res) {
   if (req.method === "POST") {
     const { email, pass } = req.body;
 
-    const content = fs.readFileSync("./users/users.json");
-    let users = JSON.parse(content);
-    let candid = users.users.find((item, i) => {
-      return item.email == email;
-    });
+    // const content = fs.readFileSync("./users/users.json");
+    // let users = JSON.parse(content);
+    // let candid = users.users.find((item, i) => {
+    //   return item.email == email;
+    // });
+    let candid = {
+      user_id: "1",
+      email: "test@gmail.com",
+      name: "John",
+      role: "Guest",
+    };
 
-    if (candid && candid.password == pass) {
+    if (email == "test@gmail.com" && pass == 1234) {
       // creating JWT
 
-      // const token = jwt.sign(
-      //   {
-      //     user_id: candid.id,
-      //     email: candid.email,
-      //     name: candid.name,
-      //     role: candid.role,
-      //   },
-      //   secret,
-      //   {
-      //     expiresIn: "50m",
-      //   }
-      // );
+      const token = jwt.sign(
+        {
+          ...candid
+        },
+        secret,
+        {
+          expiresIn: "50m",
+        }
+      );
 
-      // // save candid token
-      // candid.token = token;
+      // save candid token
+      candid.token = token;
 
       return res.status(200).json(candid);
     } else {
