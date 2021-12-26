@@ -1,7 +1,7 @@
 import React from 'react'
 import Image from "next/image";
 
-const RecentPayments = () => {
+const RecentPayments = ({ name }) => {
   return (
     <div className="col-md-12">
       <article className="crypto__recent-payments-box">
@@ -30,7 +30,7 @@ const RecentPayments = () => {
                       />
                     </div>
                     <div className="account-holder-name">
-                      <p>ریحانه صبوری</p>
+                      <p>{name}</p>
                     </div>
                   </div>
                 </td>
@@ -119,6 +119,6 @@ const RecentPayments = () => {
       </article>
     </div>
   );
-}
+};
 
 export default RecentPayments

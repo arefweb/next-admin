@@ -5,12 +5,15 @@ import IconButton from "@mui/material/IconButton";
 import AppsIcon from "@mui/icons-material/Apps";
 import MenuIcon from "@mui/icons-material/Menu";
 import Link from "next/link";
+import LogoutIcon from "@mui/icons-material/Logout";
+import { useDispatch } from "react-redux";
 
 
 const HeaderAdmin = () => {
   const [anchorEl, setAnchorEl] = useState(null);
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   const [deffredPrompt, setDeffredPrompt] = useState(null);
+  const dispatch = useDispatch();
 
   const handleClick = (event) => {
     setAnchorEl(event.currentTarget);
@@ -67,7 +70,7 @@ const HeaderAdmin = () => {
         document.getElementById("overlay").style.display = "none";
       }
     }
-    // closeMenu.this = closeMenu.bind(document.getElementById("overlay"));
+
     document.getElementById("overlay").addEventListener("click", closeMenu);
     return () => {
       document.getElementById("overlay").removeEventListener("click", closeMenu);
@@ -91,11 +94,19 @@ const HeaderAdmin = () => {
    const open = Boolean(anchorEl);
    const id = open ? "simple-popover" : undefined;
 
+   function logOut(){
+     location.assign("/login");
+     localStorage.setItem("token", "");
+   }
+
   return (
     <header className="content-area__header">
       <div className="content-area__header-buttons">
         <IconButton onClick={toggleMenu} id="menu-btn">
           <MenuIcon />
+        </IconButton>
+        <IconButton onClick={logOut}>
+          <LogoutIcon />
         </IconButton>
         <IconButton variant="contained" onClick={handleClick}>
           <AppsIcon />
@@ -129,7 +140,7 @@ const HeaderAdmin = () => {
       </div>
       <div className="logo">
         <Link href="/">
-          <a >Aref</a>
+          <a>Aref</a>
         </Link>
       </div>
     </header>

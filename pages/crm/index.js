@@ -11,8 +11,18 @@ import TaskIcon from "@mui/icons-material/Task";
 import GroupIcon from "@mui/icons-material/Group";
 import InsertDriveFileIcon from "@mui/icons-material/InsertDriveFile";
 import RecentPayments from "../../components/tables/RecentPayments";
+import { useEffect, useState } from "react";
+import callAPI from "../../services/api";
 
 const Crm = () => {
+  const [name, setName] = useState("");
+
+  useEffect(() => {
+    callAPI.getCustomers().then((resp) => {
+      setName(resp.data.name);
+    });
+  }, []);
+
   return (
     <div>
       <Head>
@@ -144,7 +154,7 @@ const Crm = () => {
         </div>
 
         <div className="row crypto__recent-payments">
-          <RecentPayments />
+          <RecentPayments name={name} />
         </div>
       </section>
     </div>

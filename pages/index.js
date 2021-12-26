@@ -1,6 +1,5 @@
 /**** Crypto Page *****/
 import Head from "next/head";
-import Link from "next/link";
 import KeyboardArrowUpIcon from "@mui/icons-material/KeyboardArrowUp";
 import KeyboardArrowDownIcon from "@mui/icons-material/KeyboardArrowDown";
 import BitcoinChart from "../components/charts/BitcoinChart";
@@ -11,9 +10,19 @@ import EarningChart from "../components/charts/EarningChart";
 import Button from "@mui/material/Button";
 import AddIcon from "@mui/icons-material/Add";
 import RecentPayments from "../components/tables/RecentPayments";
-
+import { useEffect, useState } from "react";
+import callAPI from "../services/api";
+import { useRouter } from "next/router";
 
 function Home() {
+  const [name, setName] = useState("");
+
+  useEffect(() => {
+    callAPI.getCustomers().then((resp) => {
+      setName(resp.data.name);
+    });
+  }, [])
+
   return (
     <div>
       <Head>
@@ -171,7 +180,7 @@ function Home() {
         </div>
 
         <div className="row crypto__recent-payments">
-          <RecentPayments />
+          <RecentPayments name={name} />
         </div>
       </section>
     </div>
