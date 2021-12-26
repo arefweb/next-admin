@@ -14,21 +14,22 @@ export default function handler(req, res) {
 
     if (candid && candid.password == pass) {
       // creating JWT
-      const token = jwt.sign(
-        {
-          user_id: candid.id,
-          email: candid.email,
-          name: candid.name,
-          role: candid.role,
-        },
-        secret,
-        {
-          expiresIn: "500m",
-        }
-      );
 
-      // save candid token
-      candid.token = token;
+      // const token = jwt.sign(
+      //   {
+      //     user_id: candid.id,
+      //     email: candid.email,
+      //     name: candid.name,
+      //     role: candid.role,
+      //   },
+      //   secret,
+      //   {
+      //     expiresIn: "50m",
+      //   }
+      // );
+
+      // // save candid token
+      // candid.token = token;
 
       return res.status(200).json(candid);
     } else {
